@@ -5,8 +5,7 @@ RUN \
   yum update -y && \ 
   yum install -y sudo && \
   yum clean all && \
-  cd /tmp && \
-  chmod +x agent-install.sh
+  chmod +x /tmp/agent-install.sh
 
 ADD createnode.sh /config/init/createnode.sh
 ADD supervisord.conf /etc/supervisor.d/sd.conf
