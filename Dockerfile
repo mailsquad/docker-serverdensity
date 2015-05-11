@@ -5,8 +5,9 @@ RUN \
   yum update -y && \ 
   yum install -y sudo && \
   yum clean all && \
-  chmod +x /tmp/agent-install.sh
+  cd /tmp && \
+  curl -O https://raw.githubusercontent.com/mailsquad/docker-serverdensity/master/agent-install.sh && \
+  chmod +x agent-install.sh
 
 ADD createnode.sh /config/init/createnode.sh
 ADD supervisord.conf /etc/supervisor.d/sd.conf
-ADD agent-install.sh /tmp/agent-install.sh
